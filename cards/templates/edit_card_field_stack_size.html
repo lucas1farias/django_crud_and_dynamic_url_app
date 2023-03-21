@@ -1,0 +1,42 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>PoE Divination Cards - Edit card</title>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/standard_crud_style.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section id="card-edit-stack-size">
+            <div id="container">
+
+                <!-- Div do banner -->
+                <div id="preview" class="flex-column">
+                    <h4>Mudar quantidade da carta: {{ object.name }}</h4>
+                    <img src="{{ object.image.url }}" style="height: 200px; width: 200px;">
+                </div>
+
+                <div>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class=flex-column>
+                            <input type="number" name="stack_size" placeholder="Qtd. da carta">
+                        </div>
+
+                        <!-- Div com botões de gerenciamento -->
+                        {% include 'save_or_cancel.html' %}
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+{% endblock %}
+

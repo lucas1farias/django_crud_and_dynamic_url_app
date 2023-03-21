@@ -1,0 +1,40 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Editar dados da carta</title>
+{% endblock %}
+
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/standard_crud_style.css' %}">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section>
+            <div id="container">
+
+                <!-- Div do banner -->
+                <div id="preview" class="flex-column">
+                    <h4>Edição da carta: {{ object.name }}</h4>
+                    <img src="{{ object.image.url }}" style="height: 200px; width: 200px;">
+                </div>
+
+                <form enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Nome da carta">
+                    <input type="text" name="description" placeholder="Descrição da carta">
+                    <input type="number" name="stack_size" placeholder="Quantidade da carta">
+                    <div class="flex-column">
+                        <input type="file" name="image">
+                    </div>
+
+                    <!-- Div com os botões de gerenciamento -->
+                    {% include 'save_or_cancel.html' %}
+                </form>
+            </div>
+        </section>
+    </main>
+{% endblock %}

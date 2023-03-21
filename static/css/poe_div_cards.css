@@ -1,0 +1,81 @@
+
+
+body {
+  background-color: #222;
+  color: white;
+  font-family: consolas;
+  letter-spacing: 2px;
+  margin: 5rem 0;
+}
+
+a {
+  background-color: mediumseagreen;
+  padding: .2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border-radius: .2rem;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#container img {
+  animation: shadowShift infinite 3s;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 0 0;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 0 0;
+}
+
+#led {
+  border: slateblue solid 1px;
+  box-shadow: 0 0 1rem slateblue;
+  background-color: slateblue;
+  border-radius: 1rem;
+  height: .4rem;
+  width: 90%;
+}
+
+.pattern {
+  border: aqua solid 1px;
+  text-align: center;
+}
+
+#poe-cards #container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.reduced-length {
+    width: 33rem;
+}
+
+#title {
+  text-align: center;
+}
+
+@keyframes shadowShift {
+  0% {box-shadow: 0 0 .3rem white;}
+  25% {box-shadow: 0 0 1.5rem black;}
+  50% {box-shadow: 0 0 .6rem #222;}
+  75% {box-shadow: 0 0 1.2rem #444;}
+  100% {box-shadow: 0 0 .3rem gray;}
+}

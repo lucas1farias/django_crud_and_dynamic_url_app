@@ -1,0 +1,46 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>PoE Divination Cards - Edit card</title>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/standard_crud_style.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section id="card-edit-name">
+            <!-- Div principal padrão -->
+            <div id="container">
+
+                <!-- Div do banner -->
+                <div id="preview" class="flex-column">
+                    <h4>Edição do nome da carta: {{ object.name }}</h4>
+                    <img src="{{ object.image.url }}" style="height: 200px; width: 200px;">
+                    <p class="current-label">Nome atual da carta: {{ object.name }}</p>
+                </div>
+
+                <!-- Div do formulário -->
+                <div id="edit-name-form">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <!-- Input principal -->
+                        <div id="input-for-name" class="flex-column">
+                            <input type="text" name="name" placeholder="Nome da carta">
+                        </div>
+
+                        <!-- Div com os botões de gerenciamento -->
+                        {% include 'save_or_cancel.html' %}
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+{% endblock %}
+

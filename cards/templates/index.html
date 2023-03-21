@@ -1,0 +1,21 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Página inicial</title>
+{% endblock %}
+
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="../../static/css/index.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section id="links">
+            <div id="container">
+                <a href="{% url 'poe-div-cards' %}">Ver cartões</a>
+            </div>
+        </section>
+    </main>
+{% endblock %}

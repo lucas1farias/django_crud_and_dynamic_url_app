@@ -1,0 +1,49 @@
+
+
+body {
+  background-color: #222;
+  color: white;
+  font-family: consolas;
+  letter-spacing: 2px;
+}
+
+.current-label {
+  border: yellowgreen solid 1px;
+  box-shadow: 0 0 1rem yellowgreen;
+  padding: 1rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+section #container {
+    background-color: #222;
+    box-shadow: 0 0 1rem black;
+    border: black solid 2px;
+    padding: 1rem;
+}
+
+/* Fonte: templates/save_or_cancel.html */
+section #save-btn {
+  margin: 1rem;
+}
+
+/* Fonte: templates/save_or_cancel.html */
+section #buttons-set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

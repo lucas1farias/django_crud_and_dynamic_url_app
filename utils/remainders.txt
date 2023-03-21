@@ -1,0 +1,17 @@
+
+
+========== O que é preciso saber? ==========
+* Em (views.py) temos a classe (EditPoeCardAnyField)
+* Em (urls.py) a view (EditPoeCardAnyField) ganha um "url" pelo parâmetro (name='all')
+* Esse "apelido url" é usado no template (poe_div_cards.html) via sintaxe "{% url 'all' card.pk card.slug %}"
+* A view (EditPoeCardAnyField) têm como template (edit_card_any_field.html) e a função (post)
+* A função (post) só usa (self.request.POST.get), pois (edit_card_any_field.html) possui os inputs configurados p/ isso
+
+========== EXISTE UMA ORDEM LÓGICA ==========
+* Uma view é configurada
+* Essa view ganha uma "url" ou "apelido"
+* Esse apelido é evocado no template, chamando seu valor atribuido no parâmetro "name"
+* Essa url só leva a algum lugar se, na view, haver um template instanciado p/ se conectar a ela
+* Havendo um template, e nele havendo inputs, estes podem ser resgatados pelo atributo "name" nas tags input
+* Como a view se conecta a url e a url ao template, os inputs resgatados podem ser acessados pela view
+* Esse acesso é conseguido numa função (post), que pode manipular e alterar o objeto de um modelo

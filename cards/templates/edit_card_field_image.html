@@ -1,0 +1,46 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>PoE Divination Cards - Edit image</title>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/standard_crud_style.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section id="card-edit-image">
+            <!-- Div principal padrão -->
+            <div id="container">
+
+                <!-- Div do banner -->
+                <div id="preview">
+                    <h4>Mudar a imagem: {{ object }}?</h4>
+                    <div class="flex-column">
+                        <img src="{{ object.image.url }}" style="width: 200px; height: 200px;">
+                    </div>
+                </div>
+
+                <!-- Div do formulário -->
+                <div>
+                    <form enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+
+                        <!-- Input do upload da imagem -->
+                        <div class="flex-column">
+                            <input type="file" name="image">
+                        </div>
+
+                        <!-- Div com os botões de gerenciamento -->
+                        {% include 'save_or_cancel.html' %}
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+{% endblock %}

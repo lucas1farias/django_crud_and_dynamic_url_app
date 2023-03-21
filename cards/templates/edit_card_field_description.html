@@ -1,0 +1,42 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>PoE Divination Cards - Edit card</title>
+{% endblock %}
+
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/standard_crud_style.css' %}">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section id="card-edit-description">
+            <div id="container">
+
+                <!-- Div do banner -->
+                <div id="preview" class="flex-column">
+                    <h4>Edição da descrição da carta: {{ object.name }}</h4>
+                    <img src="{{ object.image.url }}" style="height: 200px; width: 200px;">
+                    <p class="current-description">Descrição atual: {{ object.description }}</p>
+                </div>
+
+                <div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="flex-column">
+                            <input type="text" name="description" placeholder="Digite aqui a nova descrição" size="27">
+                        </div>
+
+                        <!-- Div com os botões de gerenciamento -->
+                        {% include 'save_or_cancel.html' %}
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+
+
+* Local das imagens || root/media
+* Procedimento      || criar no template admin os objetos usando os dados em "root/media" e os dados abaixo
+
+===== House of Mirrors =====
+What do you see in the mirror?
+
+===== The Apothecary =====
+You seek the power of my strongest potions, but the price will be far higher than you can imagine
+
+===== The Insane Cat =====
+One person's madness is another person's reality
+
+===== The Price of Devotion =====
+Unbeknown to Atziri's finest thaumaturgists, their loyalty would require for greater devotion than mere research
+
+===== Unrequited Love =====
+The pale flame of his heart disappeared in his azure reflection. The work of a life. Ambitious, and unfinished

@@ -1,0 +1,55 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>PoE cartões de adivinhação</title>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/poe_div_cards.css' %}">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <section id="poe-cards">
+
+            <div id="title">
+                <h3>PoE - Cartões de adivinhação (versão: django_dynamic_url_practice)</h3>
+            </div>
+
+            <div id="container">
+            {% for card in poe_cards_db %}
+                <hr id="led">
+
+                <div class="all-card-fields-edit-form">
+                    <a class="btn btn-info" href="{% url 'all' card.pk card.slug %}">Editar:
+                        <b class="text-warning">{{ card.name }}</b>
+                    </a>
+                </div>
+
+                <div class="card-name-edit-form flex-row">
+                    <a href="{% url 'name' card.pk card.slug %}">Mudar nome</a>
+                    <span>{{ card.name }}</span>
+                </div>
+
+                <div class="card-stack-size-edit-form flex-row">
+                    <a href="{% url 'stack-size' card.pk card.slug %}">Mudar qtd.</a>
+                    <span>Coleção: {{ card.stack_size }} peças</span>
+                </div>
+
+                <div class="card-image-edit-form flex-column">
+                    <img src="{{ card.image.url }}" style="width: 300px; height: 370px;">
+                    <a href="{% url 'img' card.pk card.slug %}">Mudar imagem</a>
+                </div>
+
+                <div class="card-description-edit-form flex-column">
+                    <span class="reduced-length pattern">{{ card.description }}</span>
+                    <a href="{% url 'description' card.pk card.slug %}">Mudar descrição</a>
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}
